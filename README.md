@@ -157,7 +157,9 @@ php artisan nova-modules:resource-tool {resource-tool-name} {module-name}
 ***
 **For creating a new tool connected with your module**
 
-*note: this will create as well Vue file inside your assets folder. I don't know if maybe in a future release i will 
+*note: this will create Vue file inside your assets folder as well a navigation.blade inside the Assets/views folder .*
+
+*I don't know if maybe in a future release i will 
 add a system for autoloading*
 ```shell script
 php artisan nova-modules:tool {tool-name} {module-name}
