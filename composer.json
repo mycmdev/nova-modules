@@ -9,6 +9,13 @@
         "module",
         "generator"
     ],
+    "authors": [
+        {
+            "name": "Claudio Castorina",
+            "email": "claudio.castorina01@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "license": "MIT",
     "require": {
         "php": ">=7.3.15"
