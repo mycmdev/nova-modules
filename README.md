@@ -1,4 +1,9 @@
 # Nova Modules v1.0.0 by CmDevelopment
+
+![PHP from Packagist](https://img.shields.io/packagist/php-v/mycmdev/nova-modules?style=plastic)
+![Packagist](https://img.shields.io/packagist/l/mycmdev/nova-modules?color=yellow&style=plastic)
+![Packagist](https://img.shields.io/packagist/dt/mycmdev/nova-modules?color=green&style=plastic) 
+
 A Laravel Nova Tool helping modularize your application. Often happens that our applications grow a lot and we need a 
 lot of models, resources, lenses, actions, migrations etc..
 With this package we can divide our nova parts in little chunks (or modules).
