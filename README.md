@@ -128,6 +128,7 @@ php artisan nova-modules:migration {migration-name} {module-name}
 ```shell script   
 php artisan nova-modules:model {model-name} {module-name}
 ```
+***
 **For creating a new partition metric**
 ```shell script
 php artisan nova-modules:partition {partition-name} {module-name}
