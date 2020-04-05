@@ -1,4 +1,4 @@
-# Nova Modules v1.0.0 by CmDev
+# Nova Modules v1.0.0 by CmDevelopment
 A Laravel Nova Tool helping modularize your application. Often happens that our applications grow a lot and we need a 
 lot of models, resources, lenses, actions, migrations etc..
 With this package we can divide our nova parts in little chunks (or modules).
@@ -7,7 +7,7 @@ With this package we can divide our nova parts in little chunks (or modules).
 
 To start you you just need to install the composer package
 ```shell script
-    composer require cmdev/nova-modules
+    composer require mycmdev/nova-modules
 ```
 
 In our composer.json we have to add
