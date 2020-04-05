@@ -175,11 +175,11 @@ php artisan nova-modules:value {value-name} {module-name}
 ***
 >
 
-##Thanks
+## Thanks
 I would like to thank @nWidart for giving me the idea about modular laravel application with his great package
 [nwidart/laravel-modules](https://github.com/nWidart/laravel-modules)
 
-##License
+## License
 The MIT License (MIT). Please see [License File](https://github.com/mycmdev/nova-modules/blob/master/LICENSE) for more information.
 
 
