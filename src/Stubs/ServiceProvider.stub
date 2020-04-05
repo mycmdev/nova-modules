@@ -57,6 +57,8 @@ class {{studlyName}}ServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->loadMigrationsFrom(__DIR__ .'/../Database/migrations');
+
         Nova::serving(function (ServingNova $event) {
             $this->registerViews();
             Nova::resources($this->resources());

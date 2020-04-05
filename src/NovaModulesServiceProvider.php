@@ -17,7 +17,10 @@ class NovaModulesServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/nova-modules.php' => config_path('nova-modules.php'),
-        ]);
+        ], 'nova-modules');
+        $this->mergeConfigFrom(
+            __DIR__ . '/../config/nova-modules.php', 'nova-modules'
+        );
     }
 
     /**

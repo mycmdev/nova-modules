@@ -7,6 +7,9 @@ return [
      */
     'path' => 'nova-modules',
 
-    'namespace' => 'NovaModules'
+    /**
+     * @return Namespace of your modules
+     */
+    'namespace' => "NovaModules",
 
 ];

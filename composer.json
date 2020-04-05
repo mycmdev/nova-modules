@@ -1,6 +1,7 @@
 {
     "name": "cmdev/nova-modules",
     "description": "A Laravel Nova Tool helping modularize your application",
+    "version": "1.0.0",
     "keywords": [
         "laravel",
         "nova",
