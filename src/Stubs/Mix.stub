@@ -1,0 +1,6 @@
+let mix = require('laravel-mix')
+
+mix
+  .setPublicPath('dist')
+  .js('Assets/js/{{uriKey}}.js', 'js')
+  .sass('Assets/sass/{{uriKey}}.scss', 'css')

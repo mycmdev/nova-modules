@@ -1,0 +1,35 @@
+<?php
+
+namespace {{namespace}}\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Nova;
+use Laravel\Nova\Events\ServingNova;
+
+class {{studlyName}}ServiceProvider extends ServiceProvider
+{
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+
+    }
+
+
+    /**
+     * Bootstrap your assets
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Nova::serving(function (ServingNova $event) {
+
+        });
+    }
+
+}
