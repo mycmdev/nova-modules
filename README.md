@@ -84,13 +84,15 @@ php artisan nova-modules:action {action-name} {module-name}
 ```
 ***
 **For creating new card**
-######note: it will create a folder in our assets with the Vue file so we can integrate it in our main JS file
+
+*note: it will create a folder in our assets with the Vue file so we can integrate it in our main JS file*
 ```shell script
 php artisan nova-modules:card {card-name} {module-name}
 ```
 ***
 **For creating new custom filter**
-######note: this one as well will create a folder in our assets with the Vue file.
+
+*note: this one as well will create a folder in our assets with the Vue file*
 ```shell script  
 php artisan nova-modules:custom-filter {custom-filter-name} {module-name}
 ```
@@ -101,7 +103,8 @@ php artisan nova-modules:dashboard {dashboard-name} {module-name}
 ```
 ***
 **For creating a new Field**
-######note: this one will create the 3 different Vue files for each view in our nova application.
+
+*note: this one will create the 3 different Vue files for each view in our nova application.*
 ```shell script
 php artisan nova-modules:field {field-name} {module-name}
 ```
@@ -131,25 +134,30 @@ php artisan nova-modules:partition {partition-name} {module-name}
 ```
 ***
 **If we need to integrate another service provider in our module**
-######note: you need to register it in your main module service provider. 
+
+*note: you need to register it in your main module service provider.*
 ```shell script    
 php artisan nova-modules:provider {provider-name} {module-name}
 ```
 ***
 **For creating a new resource**
-######note: resources are all auto loaded in your main application and they are grouped by default with the name of your module
+
+*note: resources are all auto loaded in your main application and they are grouped by default with the name of your module.*
 ```shell script
 php artisan nova-modules:resource {resource-name} {module-name}
 ```
 ***
 **For creating a new resource-tool**
-######note: this will create as weel Vue file inside your assets folder
+
+*note: this will create as weel Vue file inside your assets folder.*
 ```shell script
 php artisan nova-modules:resource-tool {resource-tool-name} {module-name}
 ```
 ***
 **For creating a new tool connected with your module**
-######note: this will create as well Vue file inside your assets folder. I don't know if maybe in a future release i will add a system for autoloading
+
+*note: this will create as well Vue file inside your assets folder. I don't know if maybe in a future release i will 
+add a system for autoloading*
 ```shell script
 php artisan nova-modules:tool {tool-name} {module-name}
 ```
