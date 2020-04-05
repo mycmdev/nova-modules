@@ -172,8 +172,7 @@ php artisan nova-modules:trend {trend-name} {module-name}
 ```shell script  
 php artisan nova-modules:value {value-name} {module-name}
 ```
-
-##
+***
 
 ##Thanks
 I would like to thank @nWidart for giving me the idea about modular laravel application with his great package
