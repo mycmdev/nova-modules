@@ -4,6 +4,7 @@ namespace {{namespace}}\Resources;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\ID;
 use App\Nova\Resource;
 
 class {{resourceName}} extends Resource
