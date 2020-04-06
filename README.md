@@ -10,7 +10,7 @@ With this package we can divide our nova parts in little chunks (or modules).
 
 ## Let's start
 
-To start you you just need to install the composer package
+To start you just need to install the composer package
 ```shell script
     composer require mycmdev/nova-modules
 ```
