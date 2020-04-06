@@ -54,16 +54,20 @@ class MakeResourceCommand extends ModuleGeneratorCommand
 
         $resourceModel = "$namespace\\Models\\$studlyResource";
 
+        $group = strtoupper($studlyModule);
+
         $template = str_replace([
             '{{resourceName}}',
             '{{namespace}}',
             '{{resourceModel}}',
-            '{{moduleName}}'
+            '{{moduleName}}',
+            '{{group}}'
         ],[
             $studlyResource,
             $namespace,
             $resourceModel,
-            $studlyModule
+            $studlyModule,
+            $group
         ], $this->getStub('Resource'));
 
         file_put_contents($this->dir($studlyModule)."/Resources/$studlyResource.php", $template);
