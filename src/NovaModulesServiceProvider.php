@@ -47,10 +47,11 @@ class NovaModulesServiceProvider extends ServiceProvider
         foreach($dir as $module){
             if(!$module->isDot()){
                 $module = $module->getBasename();
+
                 $provider = $namespace."\\".$module."\\Providers\\".$module."ServiceProvider";
-
-                $this->app->register($provider);
-
+                if(class_exists($provider)){
+                    $this->app->register($provider);
+                }
             }
         }
 
