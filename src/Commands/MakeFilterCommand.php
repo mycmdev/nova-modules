@@ -60,6 +60,8 @@ class MakeFilterCommand extends ModuleGeneratorCommand
             $namespace,
         ], $this->getStub('Filter'));
 
+        $this->createDirIfDoesntExists('Filters', $studlyModule);
+
         file_put_contents($this->dir($studlyModule)."/Filters/$studlyName.php", $template);
 
         $this->line("Filter $studlyName has been created!");

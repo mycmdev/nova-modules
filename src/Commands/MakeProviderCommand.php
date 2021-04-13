@@ -67,6 +67,7 @@ class MakeProviderCommand extends ModuleGeneratorCommand
                 $namespace,
             ], $this->getStub('CustomProvider'));
 
+            $this->createDirIfDoesntExists('Providers', $studlyModule);
 
             file_put_contents($this->dir($studlyModule)."/Providers/{$sanitizedName}ServiceProvider.php", $template);
 

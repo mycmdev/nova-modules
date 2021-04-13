@@ -64,10 +64,10 @@ class MakeFieldCommand extends ModuleGeneratorCommand
             $uriKey
         ], $this->getStub('Field'));
 
+        $this->createDirIfDoesntExists('Fields', $studlyModule);
+        $this->createDirIfDoesntExists("Assets/js/Fields/$studlyName", $studlyModule);
 
         file_put_contents($this->dir($studlyModule)."/Fields/$studlyName.php", $template);
-
-        mkdir($this->dir($studlyModule)."/Assets/js/Fields/$studlyName");
 
         file_put_contents($this->dir($studlyModule)."/Assets/js/Fields/$studlyName/DetailField.vue", $this->getStub('DetailField'));
         file_put_contents($this->dir($studlyModule)."/Assets/js/Fields/$studlyName/FormField.vue", $this->getStub('FormField'));

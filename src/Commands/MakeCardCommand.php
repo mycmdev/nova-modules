@@ -64,12 +64,13 @@ class MakeCardCommand extends ModuleGeneratorCommand
             $uriKey
         ], $this->getStub('Card'));
 
+        $this->createDirIfDoesntExists('Cards', $studlyModule);
+        $this->createDirIfDoesntExists("Assets/js/Cards/$studlyName", $studlyModule);
 
         file_put_contents($this->dir($studlyModule)."/Cards/$studlyName.php", $template);
 
-        mkdir($this->dir($studlyModule)."/Assets/js/Cards/$studlyName");
-
         file_put_contents($this->dir($studlyModule)."/Assets/js/Cards/$studlyName/Card.vue", $this->getStub('CardVue'));
+
         $this->line("Card $studlyName has been created!");
 
     }

@@ -68,13 +68,13 @@ class MakeToolCommand extends ModuleGeneratorCommand
         ], $this->getStub('Tool'));
 
 
+        $this->createDirIfDoesntExists('Tools', $studlyModule);
+        $this->createDirIfDoesntExists("Assets/js/Tools/$studlyName", $studlyModule);
+        $this->createDirIfDoesntExists("Assets/views/$uriKey", $studlyModule);
+
         file_put_contents($this->dir($studlyModule)."/Tools/$studlyName.php", $template);
 
-        mkdir($this->dir($studlyModule)."/Assets/js/Tools/$studlyName");
-
         file_put_contents($this->dir($studlyModule)."/Assets/js/Tools/$studlyName/Tool.vue", $this->getStub('ToolVue'));
-
-        mkdir($this->dir($studlyModule)."/Assets/views/$uriKey");
 
         file_put_contents($this->dir($studlyModule)."/Assets/views/$uriKey/navigation.blade.php", $this->getStub('ToolNavigation'));
 

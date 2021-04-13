@@ -64,10 +64,10 @@ class MakeResourceToolCommand extends ModuleGeneratorCommand
             $uriKey
         ], $this->getStub('ResourceTool'));
 
+        $this->createDirIfDoesntExists('ResourceTools', $studlyModule);
+        $this->createDirIfDoesntExists("/Assets/js/ResourceTools/$studlyName", $studlyModule);
 
         file_put_contents($this->dir($studlyModule)."/ResourceTools/$studlyName.php", $template);
-
-        mkdir($this->dir($studlyModule)."/Assets/js/ResourceTools/$studlyName");
 
         file_put_contents($this->dir($studlyModule)."/Assets/js/ResourceTools/$studlyName/Tool.vue", $this->getStub('ResourceToolVue'));
 

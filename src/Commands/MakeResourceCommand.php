@@ -70,6 +70,8 @@ class MakeResourceCommand extends ModuleGeneratorCommand
             $group
         ], $this->getStub('Resource'));
 
+        $this->createDirIfDoesntExists('Resources', $studlyModule);
+
         file_put_contents($this->dir($studlyModule)."/Resources/$studlyResource.php", $template);
 
         $this->line("Resource $studlyResource has been created!");

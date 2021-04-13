@@ -78,38 +78,25 @@ class MakeModuleCommand extends ModuleGeneratorCommand
         mkdir($this->dir($this->studlyName));
 
         $directories = [
-            'Actions',
             'Assets',
-            'Cards',
-            'Dashboards',
             'Database',
-            'Fields',
-            'Filters',
-            'Lenses',
-            'Metrics',
-            'Models',
             'Providers',
-            'Resources',
-            'ResourceTools',
             'Routes',
-            'Tools'
+            'Assets/js',
+            'Assets/js/Fields',
+            'Assets/js/Filters',
+            'Assets/js/Cards',
+            'Assets/js/ResourceTools',
+            'Assets/js/Tools',
+            'Assets/sass',
+            'Assets/views',
+            'Database/migrations',
+            'Database/seeds',
         ];
 
         foreach ($directories as $directory){
-            mkdir("{$this->dir($this->studlyName)}/$directory");
+            $this->createDirIfDoesntExists($directory, $this->studlyName);
         }
-
-
-        mkdir("{$this->dir($this->studlyName)}/Assets/js");
-        mkdir("{$this->dir($this->studlyName)}/Assets/js/Fields");
-        mkdir("{$this->dir($this->studlyName)}/Assets/js/Filters");
-        mkdir("{$this->dir($this->studlyName)}/Assets/js/Cards");
-        mkdir("{$this->dir($this->studlyName)}/Assets/js/ResourceTools");
-        mkdir("{$this->dir($this->studlyName)}/Assets/js/Tools");
-        mkdir("{$this->dir($this->studlyName)}/Assets/sass");
-        mkdir("{$this->dir($this->studlyName)}/Assets/views");
-        mkdir("{$this->dir($this->studlyName)}/Database/migrations");
-        mkdir("{$this->dir($this->studlyName)}/Database/seeds");
 
         $this->line('Directories have been created');
     }

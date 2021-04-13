@@ -1,0 +1,10 @@
+<?php
+
+namespace {{namespace}}\Policies;
+
+use Cmdev\NovaModules\Library\BasePolicy;
+
+class {{studlyName}} extends BasePolicy
+{
+    // Write here your policies, remember all base policies are setted TRUE by default
+}

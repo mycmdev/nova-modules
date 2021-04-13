@@ -9,21 +9,11 @@ use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-class MakeLensCommand extends ModuleGeneratorCommand
+class MakePolicyCommand extends ModuleGeneratorCommand
 {
-    /**
-     * The console command name.
-     *
-     * @var string
-     */
-    protected $name = 'nova-modules:lens';
+    protected $name = "nova-modules:policy";
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
-    protected $description = 'Create a new lens.';
+    protected $description = "Create new policy";
 
     /**
      * Create a new command instance.
@@ -52,23 +42,19 @@ class MakeLensCommand extends ModuleGeneratorCommand
 
         $studlyModule = Str::studly($module);
 
-        $uriKey = Str::kebab($this->key('name'));
-
         $template = str_replace([
             '{{studlyName}}',
             '{{namespace}}',
-            '{{uriKey}}'
         ],[
             $studlyName,
             $namespace,
-            $uriKey
-        ], $this->getStub('Lens'));
+        ], $this->getStub('Policy'));
 
-        $this->createDirIfDoesntExists('Lenses', $studlyModule);
+        $this->createDirIfDoesntExists('Policies', $studlyModule);
 
-        file_put_contents($this->dir($studlyModule)."/Lenses/$studlyName.php", $template);
+        file_put_contents($this->dir($studlyModule)."/Policies/$studlyName.php", $template);
 
-        $this->line("Lens $studlyName has been created!");
+        $this->line("Policy $studlyName has been created!");
 
     }
 
@@ -80,7 +66,7 @@ class MakeLensCommand extends ModuleGeneratorCommand
     protected function getArguments()
     {
         return [
-            ['name', InputArgument::REQUIRED, 'Lens name'],
+            ['name', InputArgument::REQUIRED, 'Action name'],
             ['module', InputArgument::REQUIRED, 'Module name']
         ];
     }

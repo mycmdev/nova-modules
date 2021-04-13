@@ -62,6 +62,8 @@ class MakeMigrationCommand extends ModuleGeneratorCommand
 
         $uniqueFileName = date('Y_m_d')."_".date('his')."_".$snake_name;
 
+        $this->createDirIfDoesntExists('Database/migrations', $studlyModule);
+
         file_put_contents($this->dir($studlyModule)."/Database/migrations/$uniqueFileName.php", $template);
 
         $this->line("Migration $uniqueFileName created.");

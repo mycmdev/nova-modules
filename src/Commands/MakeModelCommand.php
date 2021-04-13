@@ -60,6 +60,9 @@ class MakeModelCommand extends ModuleGeneratorCommand
             $namespace,
         ], $this->getStub('Model'));
 
+
+        $this->createDirIfDoesntExists('Models', $studlyModule);
+
         file_put_contents($this->dir($studlyModule)."/Models/$studlyName.php", $template);
 
         $this->line("Model $studlyName has been created!");

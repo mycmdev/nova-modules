@@ -64,6 +64,7 @@ class MakeDashboardCommand extends ModuleGeneratorCommand
             $uriKey
         ], $this->getStub('Dashboard'));
 
+        $this->createDirIfDoesntExists('Dashboards', $studlyModule);
 
         file_put_contents($this->dir($studlyModule)."/Dashboards/$studlyName.php", $template);
         $this->line("Dashboard $studlyName has been created!");

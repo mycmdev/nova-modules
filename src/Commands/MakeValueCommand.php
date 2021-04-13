@@ -64,6 +64,8 @@ class MakeValueCommand extends ModuleGeneratorCommand
             $uriKey
         ], $this->getStub('Value'));
 
+        $this->createDirIfDoesntExists('Metrics', $studlyModule);
+
         if(file_exists($this->dir($studlyModule)."/Metrics/$studlyName.php")){
             $this->error("Impossible to continue, there is already a metric with the same name.");
         }else{

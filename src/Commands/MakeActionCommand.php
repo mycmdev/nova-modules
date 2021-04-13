@@ -60,6 +60,8 @@ class MakeActionCommand extends ModuleGeneratorCommand
             $namespace,
         ], $this->getStub('Action'));
 
+        $this->createDirIfDoesntExists('Actions', $studlyModule);
+
         file_put_contents($this->dir($studlyModule)."/Actions/$studlyName.php", $template);
 
         $this->line("Action $studlyName has been created!");

@@ -64,6 +64,8 @@ class MakePartitionCommand extends ModuleGeneratorCommand
             $uriKey
         ], $this->getStub('Partition'));
 
+        $this->createDirIfDoesntExists('Metrics', $studlyModule);
+
         file_put_contents($this->dir($studlyModule)."/Metrics/$studlyName.php", $template);
 
         $this->line("Metric $studlyName has been created!");

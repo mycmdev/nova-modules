@@ -35,6 +35,15 @@ abstract class ModuleGeneratorCommand extends Command
         return preg_replace('/[^a-zA-Z0-9]+/', '', $this->argument($argument));
     }
 
+    protected function createDirIfDoesntExists($dirName, $moduleName)
+    {
+        $directory = "{$this->dir($moduleName)}/$dirName";
+
+        if(!is_dir($directory)){
+            mkdir($directory);
+        }
+    }
+
 
 
 }

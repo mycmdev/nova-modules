@@ -64,9 +64,10 @@ class MakeCustomFilterCommand extends ModuleGeneratorCommand
             $uriKey
         ], $this->getStub('CustomFilter'));
 
-        file_put_contents($this->dir($studlyModule)."/Filters/$studlyName.php", $template);
+        $this->createDirIfDoesntExists('Filters', $studlyModule);
+        $this->createDirIfDoesntExists("Assets/js/Filters/$studlyName", $studlyModule);
 
-        mkdir("{$this->dir($studlyModule)}/Assets/js/Filters/$studlyName");
+        file_put_contents($this->dir($studlyModule)."/Filters/$studlyName.php", $template);
 
         file_put_contents("{$this->dir($studlyModule)}/Assets/js/Filters/$studlyName/Filter.vue", $this->getStub('FilterVue'));
 
