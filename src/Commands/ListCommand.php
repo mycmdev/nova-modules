@@ -5,6 +5,11 @@ namespace Cmdev\NovaModules\Commands;
 
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
+use Laravel\Nova\Actions\ActionResource;
+use Laravel\Nova\Resource;
+use ReflectionClass;
+use Symfony\Component\Finder\Finder;
 
 class ListCommand extends Command
 {
@@ -30,18 +35,33 @@ class ListCommand extends Command
 
         $dir = new \DirectoryIterator($path);
 
+        $resources = [];
 
         foreach($dir as $module){
             if(!$module->isDot()){
                 $novaModule = $module->getBasename();
 
-                $resourceDir = new \DirectoryIterator($path."/".$novaModule."/Resources");
-                foreach($resourceDir as $resource){
-                    if(!$resource->isDot()){
-                        $this->line($resource->getBasename());
+                $directory = $path . '/' . $novaModule;
+                $namespace = $namespace."\\".$novaModule;
+
+                foreach ((new Finder)->in($directory)->files() as $resource) {
+                    $resource = str_replace(
+                        '.php',
+                        '',
+                        $namespace."\\Resources\\".Str::afterLast($resource, '\\')
+                    );
+
+                    if (is_subclass_of($resource, Resource::class) &&
+                        ! (new ReflectionClass($resource))->isAbstract() &&
+                        ! (is_subclass_of($resource, ActionResource::class))) {
+                        $resources[] = $resource;
                     }
                 }
             }
+        }
+
+        foreach($resources as $resource){
+            $this->line($resource);
         }
 
 
