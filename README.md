@@ -1,4 +1,4 @@
-# Nova Modules v1.0.0 by CmDevelopment
+# Nova Modules v1.3.0 by CmDevelopment
 
 ![PHP from Packagist](https://img.shields.io/packagist/php-v/mycmdev/nova-modules?style=plastic)
 ![Packagist](https://img.shields.io/packagist/l/mycmdev/nova-modules?color=yellow&style=plastic)
@@ -178,6 +178,11 @@ php artisan nova-modules:trend {trend-name} {module-name}
 **For creating a  new value metric**
 ```shell script  
 php artisan nova-modules:value {value-name} {module-name}
+```
+***
+**For creating a new policy**
+```shell script
+php artisan nova-modules:policy {policy-name} {module-name}
 ```
 ***
 >
