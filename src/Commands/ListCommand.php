@@ -55,6 +55,8 @@ class ListCommand extends Command
                         ! (new ReflectionClass($resource))->isAbstract() &&
                         ! (is_subclass_of($resource, ActionResource::class))) {
                         $resources[] = $resource;
+                    }else{
+                        $this->error("Errore per la risorsa: $resource");
                     }
                 }
             }
