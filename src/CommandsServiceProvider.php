@@ -27,7 +27,8 @@ class CommandsServiceProvider extends ServiceProvider
             'Cmdev\NovaModules\Commands\MakeModelCommand',
             'Cmdev\NovaModules\Commands\MakeProviderCommand',
             'Cmdev\NovaModules\Commands\SeederCommand',
-            'Cmdev\NovaModules\Commands\MakePolicyCommand'
+            'Cmdev\NovaModules\Commands\MakePolicyCommand',
+            'Cmdev\NovaModules\Commands\ListCommand',
         ]);
     }
 

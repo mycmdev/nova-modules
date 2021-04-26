@@ -43,7 +43,6 @@ class NovaModulesServiceProvider extends ServiceProvider
 
         $dir = new \DirectoryIterator($path);
 
-
         foreach($dir as $module){
             if(!$module->isDot()){
                 $module = $module->getBasename();
