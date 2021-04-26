@@ -35,7 +35,7 @@ class ListCommand extends Command
             if(!$module->isDot()){
                 $novaModule = $module->getBasename();
 
-                $resourceDir = new \DirectoryIterator($path."/".$novaModule."/resources");
+                $resourceDir = new \DirectoryIterator($path."/".$novaModule."/Resources");
                 foreach($resourceDir as $resource){
                     if(!$resource->isDot()){
                         $this->line($resource->getBasename());
